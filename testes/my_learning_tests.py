@@ -14,11 +14,28 @@ class Animals:
         return f'{self.name} is dancing now!'
 
 
-a = Animals('Kaka', '15')
-b = Animals('Gaio', '34')
-c = Animals('Flaiauei', '08')
+class Penguins(Animals):
+    def __init__(self, name, age):
+        super().__init__(name, age)
+        self.name = name
+        self.age = age
+        print('penguins are ready')
 
-print(f'''{a.name} is a {a.__class__.species_cat}, she is {a.age} yers old. {(a.sing("'Hey you'"))}. {(a.dance())}''')
-print(f'''{b.name} is a {b.__class__.species_dog}, he is {b.age} yers old. {(b.sing("'Get away'"))}. {(b.dance())}''')
-print(f'''{c.name} is a {c.__class__.species_bird}, he is {c.age} yers old. {(c.sing("'Oh no!'"))}. {(c.dance())}''')
+    def swim(self):
+        return ('swim faster')
+
+    def run(self):
+        print('run faster')
+
+
+a = Animals('Gaio', '34')
+b = Animals('Flaiauei', '08')
+c = Penguins('Tobi', '12')
+d = Penguins('Jenny', '34')
+
+
+print(f'''{a.name} is a {a.__class__.species_cat}, he is {a.age} yers old. {(a.sing("'Hey you'"))}. {(a.dance())}''')
+print(f'''{b.name} is a {b.__class__.species_bird}, he is {b.age} yers old. {(b.sing("'Get away'"))}. {(b.dance())}''')
+print()
+print(f'{c.name}! Age: {c.age}. {c.swim().upper()}!')
 
